@@ -1,15 +1,14 @@
 ---
-import { Icon } from "astro-icon"
-import { Image } from "astro:assets"
-import profilePhoto from "../assets/img/profile-photo.png"
-
-const { src = "/astronaut-hero-img.webp" } = Astro.props
+import ProfilePhoto from "./ProfilePhoto.astro"
+import CTAButton from "./CTAButton.astro"
+import HeroBackground from "./HeroBackground.astro"
+import HeroContent from "./HeroContent.astro"
 ---
 
 <section class="hero flex h-screen flex-col">
 	<div
 		id="main-navigation"
-		class="is-desktop borderPink w-full py-6 transition-all"
+		class="is-desktop -z-50 w-full py-6 opacity-0 transition-all md:hidden"
 	>
 		<div class="container">
 			<a href="/" class="flex items-center gap-2 !no-underline">
@@ -33,59 +32,18 @@ const { src = "/astronaut-hero-img.webp" } = Astro.props
 			</a>
 		</div>
 	</div>
-	<div class="borderYellow container h-full min-h-[700px] w-full">
-		<div
-			class="profile-container relative mt-10 flex w-full flex-col items-center"
-		>
-			<div class="absolute top-4 h-72 w-72 overflow-hidden rounded-full">
-				<div class="absolute left-[-20px] h-80 w-80 rounded-full">
-					<Image
-						src={profilePhoto}
-						width={3000}
-						alt="My Profile Photo"
-					/>
-				</div>
-			</div>
-			<div
-				class="profile-border absolute h-80 w-80 overflow-hidden rounded-full border-4"
-			>
-				<!-- <div class="absolute left-[-20px] h-80 w-80 rounded-full">
-				<Image src={profilePhoto} width={3000} alt="My Profile Photo" />
-			</div> -->
-			</div>
-		</div>
-
-		<!-- <div class="grid grid-cols-1 items-center gap-24 lg:grid-cols-2">
-			<div class="flex flex-col items-center gap-8 md:items-start">
-				<h1 class="text-center text-6xl md:text-left lg:text-8xl">
-					<slot
-						><span class="text-gradient">Accessible</span> Starter for
-						Astro</slot
-					>
-				</h1>
-				<div class="flex flex-col gap-3 min-[500px]:flex-row">
-					<a
-						class="button has-icon"
-						href="https://github.com/markteekman/accessible-astro-starter"
-					>
-						<Icon pack="ion" name="star-outline" />
-						Star on GitHub
-					</a>
-					<a
-						class="button has-icon color-secondary"
-						href="https://github.com/markteekman/accessible-astro-starter/blob/main/README.md"
-					>
-						<Icon pack="ion" name="bookmark-outline" />
-						Read the Docs
-					</a>
-				</div>
-			</div>
-			<img class="hidden lg:block" src={src} alt="" decoding="async" />
-		</div> -->
+	<div
+		class="relative flex h-full max-h-[860px] min-h-[800px] w-full flex-col items-center"
+	>
+		<HeroBackground />
+		<HeroContent />
 	</div>
 </section>
-
 <style lang="scss">
+	#main-navigation {
+		// background-color: var(--background);
+		background-color: transparent;
+	}
 	.text-gradient {
 		background: linear-gradient(
 			315deg,
@@ -95,10 +53,6 @@ const { src = "/astronaut-hero-img.webp" } = Astro.props
 		background-clip: border-box;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
-	}
-
-	.profile-border {
-		border-color: var(--secondary-400);
 	}
 
 	:global(.darkmode .text-gradient) {

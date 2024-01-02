@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets"
+import profilePhoto from "../assets/img/profile-photo.png"
+---
+
+<div
+	class="items-center justify-end md:flex md:h-full md:flex-1 md:justify-center lg:flex-auto"
+>
+	<div
+		class="flex h-96 w-[354px] md:h-[600px] md:w-[360px] lg:h-[600px] lg:w-[600px]"
+	>
+		<div
+			class="profile-container relative mt-10 flex w-full flex-col items-center md:mt-20 lg:mt-16"
+		>
+			<div
+				class="absolute right-14 top-[-25px] lg:right-[100px] lg:top-[-20px]"
+			>
+				<div
+					class="profile-border absolute left-[-8px] top-2 w-5 rounded-sm border-2 lg:left-[-14px] lg:w-8"
+				>
+				</div>
+				<div
+					class="profile-border absolute h-5 rounded-sm border-2 lg:top-[-5px] lg:h-8"
+				>
+				</div>
+			</div>
+			<div class="absolute right-4 top-8">
+				<div
+					class="profile-border absolute left-[-15px] top-2 h-6 w-6 rounded-full border lg:left-[-60px] lg:top-[50px] lg:h-10 lg:w-10"
+				>
+				</div>
+			</div>
+			<div
+				class="absolute top-4 h-72 w-72 overflow-hidden rounded-full md:h-[330px] md:w-[330px] lg:h-[430px] lg:w-[430px]"
+			>
+				<div
+					class="absolute left-[-30px] h-[350px] w-[350px] rounded-full md:left-[-60px] md:h-[450px] md:w-[450px] lg:left-[-50px] lg:h-[530px] lg:w-[530px]"
+				>
+					<Image
+						src={profilePhoto}
+						width={3000}
+						alt="My Profile Photo"
+					/>
+				</div>
+			</div>
+			<div
+				class="profile-border absolute h-80 w-80 overflow-hidden rounded-full border-4 md:h-[360px] md:w-[360px] lg:h-[460px] lg:w-[460px]"
+			>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	.profile-border {
+		border-color: var(--action-color);
+	}
+</style>

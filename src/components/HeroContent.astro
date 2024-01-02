@@ -1,0 +1,66 @@
+---
+import ProfilePhoto from "./ProfilePhoto.astro"
+import CTAButton from "./CTAButton.astro"
+---
+
+<div
+	class="container flex h-full flex-col items-center md:flex-row-reverse md:justify-between"
+>
+	<ProfilePhoto />
+	<div class="h-full items-center justify-center md:flex">
+		<div
+			class="flex h-full max-w-[500px] flex-1 flex-col items-center md:h-4/6 md:max-w-[400px] md:pb-24 lg:max-w-[500px] lg:pb-0"
+		>
+			<div class="text-container w-full space-y-2 md:pt-16 lg:pt-16">
+				<div class="intro-text text-center md:text-left">
+					Hello, I am
+				</div>
+				<div class="name-text text-center md:pt-4 md:text-left lg:pt-4">
+					Marc Robotham
+				</div>
+				<div class="info-text pt-2 text-center md:text-left lg:pt-4">
+					I’m passionate about crafting performant, testable code and
+					enhancing user experiences. I'm here to turn ideas into
+					interactive and seamless digital experiences.
+				</div>
+			</div>
+			<div
+				class="text-container flex h-full w-full flex-row items-center justify-center md:justify-start"
+			>
+				<CTAButton type="primary" name="About Me" href="/" />
+				<CTAButton type="secondary" name="Contact Me" href="/" />
+			</div>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	.intro-text {
+		color: #00e5e5;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 98%; /* 15.68px */
+		letter-spacing: -0.32px;
+	}
+	.name-text {
+		font-size: 68px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 98%; /* 66.64px */
+		letter-spacing: -1.36px;
+	}
+
+	@media (min-width: 1280px) {
+		.name-text {
+			font-size: 80px;
+		}
+	}
+	.info-text {
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 23.5px; /* 146.875% */
+		letter-spacing: -0.32px;
+	}
+</style>
